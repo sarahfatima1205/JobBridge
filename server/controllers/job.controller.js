@@ -1,21 +1,20 @@
-import { Job } from "../models/job.model.js";
+import Job from "../models/job.model.js";
 
 export const postJob = async (req, res) => {
-    try {
-        const { title, description, requirements, salary, location, jobType, experienceLevel, position, companyId } = req.body;
-        const userId = req.id;
-
-        if (!title || !description || !requirements || !salary || !location || !jobType || !experienceLevel || !position || !companyId) {
+    try{
+        const{title, description, requirements, salary, location, jobType, experienceLevel, position, companyId}= req.body;
+        const userId= req.id;
+        if(!title || !description || !requirements || !salary || !location || !jobType || !experienceLevel || !position || !companyId) {
             return res.status(400).json({
-                message: "Something is missing.",
-                success: false
+                message:"Something is missing.",
+                success:false
             })
         };
         const job = await Job.create({
             title,
             description,
             requirements: requirements.split(","),
-            salary: Number(salary),
+            salary:Number(salary),
             location,
             jobType,
             experienceLevel:    experienceLevel.toLowerCase(),
