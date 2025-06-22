@@ -28,8 +28,8 @@ const Signup = () => {
       <Navbar />
       <div className="flex flex-1 justify-center items-center p-4">
         <div className="bg-white rounded-xl shadow-xl p-8 md:p-10 w-full max-w-md">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
-            Create your <span className="text-[#8000ff]">JobBridge</span> account
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 text-blue-900">
+            Create your <span className="text-black">Job</span><span className="text-[#8000ff]">Bridge</span> account
           </h2>
           <p className="text-gray-500 text-center mb-6">
             Enter your details to sign up.
