@@ -36,7 +36,7 @@ const Signup = () => {
           </p>
 
           <form className="space-y-4">
-            <div>
+            <div className="space-y-2">
               <Label>Full Name</Label>
               <Input
                 type="text"
@@ -46,7 +46,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label>Email address</Label>
               <Input
                 type="email"
@@ -56,7 +56,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label>Phone Number</Label>
               <Input
                 type="tel"
@@ -66,7 +66,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label>Password</Label>
               <Input
                 type="password"
@@ -77,8 +77,8 @@ const Signup = () => {
               />
             </div>
 
-            <div>
-              <Label className="block mb-1">Role</Label>
+            <div className="space-y-2">
+              <Label className="block mb-1"></Label>
               <div className="flex gap-4">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <Input
