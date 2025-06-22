@@ -41,7 +41,7 @@ const Signup = () => {
               <Input
                 type="text"
                 name="fullname"
-                placeholder="Sarah Patel"
+                placeholder="Sarah Fatima"
                 value={input.fullname}
                 onChange={handleChange}
               />
