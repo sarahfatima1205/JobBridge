@@ -8,6 +8,7 @@ import userRoutes from './routes/user.route.js';
 import companyRoutes from './routes/company.route.js';
 import jobRoutes from './routes/job.route.js';
 import applicationRoutes from './routes/application.route.js';
+import matchRoutes from './routes/match.route.js';
 import isAuthenticated from './middlewares/isAuthenticated.js';
 
 dotenv.config({});
@@ -35,7 +36,7 @@ app.use("/api/v1/user",userRoutes);
 app.use("/api/v1/company",companyRoutes);
 app.use("/api/v1/job",jobRoutes);
 app.use("/api/v1/application",applicationRoutes);
-
+app.use("/api/v1/match", matchRoutes);
 app.listen(PORT,()=>{
     connectDB();
     console.log(`Server is running on http://localhost:${PORT}`);

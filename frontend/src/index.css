@@ -65,7 +65,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+} 
 
 @import "tailwindcss";
 
@@ -284,5 +284,71 @@ button:focus-visible {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+*/
+
+ @import "tailwindcss";
+@import "tw-animate-css";
+
+/* === Custom Background and Design Tokens === */
+:root {
+  --radius: 0.625rem;
+
+  /* Custom purple background and dark text */
+  --background: #e3d8ff;
+  --foreground: #1a1a1a;
+
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+
+  --primary: #8000ff;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3e8ff;
+  --secondary-foreground: #1a1a1a;
+
+  --muted: #f5f3ff;
+  --muted-foreground: #4b5563;
+
+  --accent: #ede9fe;
+  --accent-foreground: #1a1a1a;
+
+  --destructive: #ef4444;
+  --border: #d1d5db;
+  --input: #e5e7eb;
+  --ring: #a78bfa;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #8000ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ede9fe;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #a78bfa;
+}
+
+/* Optional: Dark Mode (not active by default) */
+.dark {
+  --background: #1e1b2e;
+  --foreground: #f4f4f5;
+}
+
+/* === Base Tailwind Layer === */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full m-0 p-0;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
