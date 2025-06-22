@@ -11,11 +11,16 @@ const Signup = () => {
     email: "",
     phone: "",
     password: "",
-    role: "student", // default selected
+    role: "student",
+    file: null,
   });
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e) => {
+    setInput({ ...input, file: e.target.files?.[0] });
   };
 
   return (
@@ -32,7 +37,7 @@ const Signup = () => {
 
           <form className="space-y-4">
             <div>
-              <div className="space-y-2"><Label>Full Name</Label>
+              <Label>Full Name</Label>
               <Input
                 type="text"
                 name="fullname"
@@ -40,10 +45,8 @@ const Signup = () => {
                 value={input.fullname}
                 onChange={handleChange}
               />
-              </div>
             </div>
             <div>
-              <div className="space-y-2">
               <Label>Email address</Label>
               <Input
                 type="email"
@@ -52,10 +55,8 @@ const Signup = () => {
                 value={input.email}
                 onChange={handleChange}
               />
-              </div>
             </div>
             <div>
-              <div className="space-y-2">
               <Label>Phone Number</Label>
               <Input
                 type="tel"
@@ -64,10 +65,8 @@ const Signup = () => {
                 value={input.phone}
                 onChange={handleChange}
               />
-              </div>
             </div>
             <div>
-              <div className="space-y-2">
               <Label>Password</Label>
               <Input
                 type="password"
@@ -76,11 +75,10 @@ const Signup = () => {
                 value={input.password}
                 onChange={handleChange}
               />
-              </div>
             </div>
 
             <div>
-              <Label className="block mb-1"></Label>
+              <Label className="block mb-1">Role</Label>
               <div className="flex gap-4">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <Input
@@ -103,6 +101,16 @@ const Signup = () => {
                   <span>Recruiter</span>
                 </label>
               </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Label>Profile image</Label>
+              <Input
+                accept="image/*"
+                type="file"
+                onChange={handleFileChange}
+                className="cursor-pointer"
+              />
             </div>
 
             <Button
